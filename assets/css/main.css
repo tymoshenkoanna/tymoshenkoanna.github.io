@@ -2817,8 +2817,8 @@ input, select, textarea {
 			}
 
 			ul.icons li .icon:before {
-				width: 2.25rem;
-				height: 2.25rem;
+				width: 2.5rem;
+				height: 2.5rem;
 				line-height: 2.25rem;
 				display: inline-block;
 				text-align: center;
@@ -2833,6 +2833,31 @@ input, select, textarea {
 			transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 			font-size: 1rem;
 		}
+		ul.icons {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-grow: 1;
+			-webkit-flex-grow: 1;
+			-ms-flex-grow: 1;
+			flex-grow: 1;
+			-moz-flex-shrink: 1;
+			-webkit-flex-shrink: 1;
+			-ms-flex-shrink: 1;
+			flex-shrink: 1;
+			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-weight: 900;
+			font-size: 0.8rem;
+			letter-spacing: 0.075em;
+			list-style: none;
+			margin-bottom: 0;
+			padding-left: 0;
+			text-transform: uppercase;
+		}
+
+
+
 
 /* List */
 
@@ -3508,8 +3533,8 @@ input, select, textarea {
 		overflow: hidden;
 		padding: 0 2rem 0 0;
 		position: relative;
-		width: calc(100% - 4rem);
-		max-width: window.innerWidth;
+		width: device-width;
+		max-width: device-width;
 		z-index: 2;
 	}
 
@@ -3645,8 +3670,8 @@ input, select, textarea {
 		background-color: #ffffff;
 		position: relative;
 		margin: 0 auto;
-		width: calc(100% - 4rem);
-		max-width: window.innerWidth;
+		width: device-width;
+		max-width: device-width;
 		z-index: 2;
 	}
 
@@ -3844,8 +3869,8 @@ input, select, textarea {
 		cursor: default;
 		position: relative;
 		margin: 0 auto;
-		width: calc(100% - 4rem);
-		max-width: window.innerWidth;
+		width: device-width;
+		max-width: device-width;
 		z-index: 2;
 	}
 
@@ -4281,8 +4306,8 @@ input, select, textarea {
 		text-align: center;
 		text-transform: uppercase;
 		margin: 4rem auto 8rem auto;
-		width: calc(100% - 4rem);
-		max-width: window.innerWidth;
+		width: device-width;
+		max-width: device-width;
 		z-index: 2;
 	}
 
@@ -4573,3 +4598,10 @@ input, select, textarea {
 		}
 
 	}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
