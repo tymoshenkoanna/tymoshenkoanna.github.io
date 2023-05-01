@@ -6,11 +6,55 @@
 -->
 <html>
 	<head>
-		<title>BEYOND THE FRONTIER ABOUT</title>
+		<title>FOOD ART MOTORBIKE ABOUT</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+		.img-gallery {
+			width: 100%;
+			margin: 50px auto 50px;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-gap: 30px;
+			}
+		.img-gallery img {
+			width: 80%;
+			height: 80%;
+			cursor: pointer;
+			}
+		.img-gallery img:hover {
+			transform: scale(1.1);
+			}
+		.full-img {
+			width: 100%;
+			heigh: 100%;
+			background: rgba(0,0,0,0.8);
+			background-size: 100vh;
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			z-index: 100;
+			}
+		.full-img img {
+			max-height: 100vh;
+			}
+		.full-img span {
+			position: absolute;
+			top: 2%;
+			right: 2%;
+			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-size: 1.2rem;
+			opacity: 0.9;
+			font-weight: 900;
+			color: white;
+			cursor: pointer;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -19,7 +63,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">BEYOND THE FRONTIER</a>
+						<a href="index.html" class="logo">FOOD ART MOTORBIKE</a>
 					</header>
 
 				<!-- Nav -->
@@ -43,11 +87,28 @@
 								<header class="major">
 									<h1>GALLERY</h1>
 								</header>
+									<div class="full-img" id="fullImgBox">
+										<img src="images/Anna.jpg" alt="Picture" id="fullImg">
+										<span onclick="closeFullImg()">X</span>
+									</div>
+									<div class="img-gallery">
+										<img src="images/Anna.jpg" alt="Picture" onclick="openFullImg(this.src)">	
+										<img src="images/Jan.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img src="images/Us.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img src="images/Camping.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img src="images/Stelvio.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg(this.src)">				
+									</div>
+								<hr />
+							</section>
 
-								
 
-							
 
+
+
+		
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
@@ -74,10 +135,6 @@
 						
 					</footer>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
 
 			</div>
 
@@ -89,6 +146,18 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var fullImgBox = document.getElementById("fullImgBox");
+				var fullImg = document.getElementById("fullImg");
+				function openFullImg(pic){
+							fullImgBox.style.display = "flex";
+							fullImg.src = pic;
+							}
+				function closeFullImg() {
+							fullImgBox.style.display = "none";
+							}
+			</script>
+
 
 	</body>
 </html>
