@@ -20,8 +20,8 @@
 			grid-gap: 30px;
 			}
 		.img-gallery img {
-			width: 80%;
-			height: 80%;
+			width: 100%;
+			height: 100%;
 			cursor: pointer;
 			}
 		.img-gallery img:hover {
@@ -54,6 +54,7 @@
 			color: white;
 			cursor: pointer;
 			}
+
 		</style>
 	</head>
 	<body class="is-preload">
@@ -92,14 +93,14 @@
 										<span onclick="closeFullImg()">X</span>
 									</div>
 									<div class="img-gallery">
-										<img src="images/Anna.jpg" alt="Picture" onclick="openFullImg(this.src)">	
-										<img src="images/Jan.jpg" alt="Picture" onclick="openFullImg(this.src)">
-										<img src="images/Us.JPG.jpg" alt="Picture" onclick="openFullImg(this.src)">
-										<img src="images/Camping.JPG" alt="Picture" onclick="openFullImg(this.src)">
-										<img src="images/Stelvio.JPG" alt="Picture" onclick="openFullImg(this.src)">
-										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg(this.src)">
-										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg(this.src)">
-										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg(this.src)">				
+										<img id="smallImg" src="images/Anna-s.jpg" alt="Picture" onclick="openFullImg()">	
+										<img id="smallImg" src="images/Jan-s.jpg" alt="Picture" onclick="openFullImg()">
+										<img id="smallImg" src="images/Us-s.JPG" alt="Picture" onclick="openFullImg()">
+										<img id="smallImg" src="images/Camping-s.JPG" alt="Picture" onclick="openFullImg()">
+										<img src="images/Stelvio-s.JPG" alt="Picture" onclick="openFullImg()">
+										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg()">
+										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg()">
+										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg()">				
 									</div>
 								<hr />
 							</section>
@@ -149,14 +150,22 @@
 			<script>
 				var fullImgBox = document.getElementById("fullImgBox");
 				var fullImg = document.getElementById("fullImg");
+				var smallImg = document.getElementById("smallImg");
 				function openFullImg(pic){
 							fullImgBox.style.display = "flex";
 							fullImg.src = pic;
+							if (smallImg.getAttribute('src') == "images/Anna-s.jpg")
+               							{fullImg.src = "images/Anna.jpg";}
+							else if (smallImg.getAttribute('src') == "images/Jan-s.jpg")
+               							{fullImg.src = "images/Jan.jpg";}
+							else
+								{fullImg.src = "images/Stelvio.jpg";}
 							}
 				function closeFullImg() {
 							fullImgBox.style.display = "none";
 							}
 			</script>
+
 
 
 	</body>
