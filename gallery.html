@@ -13,17 +13,47 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
 		.img-gallery {
-			width: 100%;
-			margin: 50px auto 50px;
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			grid-gap: 30px;
+			-webkit-column-count: 3;
+			-webkit-column-gap: 2vh;
+			-moz-column-count: 3;
+			-moz-column-gap: 2vh;
+			column-count: 3;
+			column-gap: 2vh;  
 			}
 		.img-gallery img {
 			width: 100%;
-			height: 100%;
 			cursor: pointer;
+			object-fit: cover;
 			}
+		@media (max-width: 1200px) {
+			.img-gallery {
+				-moz-column-count:    3;
+				-webkit-column-count: 3;
+				column-count:         3;
+				}
+			}
+		@media (max-width: 1000px) {
+			.img-gallery {
+				-moz-column-count:    3;
+				-webkit-column-count: 3;
+				column-count:         3;
+					}
+			}
+		@media (max-width: 800px) {
+			.img-gallery {
+				-moz-column-count:    2;
+				-webkit-column-count: 2;
+				column-count:         2;
+					}
+			}
+		@media (max-width: 400px) {
+			.img-gallery {
+				-moz-column-count:    1;
+				-webkit-column-count: 1;
+				column-count:         1;
+					}
+			}
+
 		.img-gallery img:hover {
 			transform: scale(1.1);
 			}
@@ -54,7 +84,6 @@
 			color: white;
 			cursor: pointer;
 			}
-
 		</style>
 	</head>
 	<body class="is-preload">
@@ -93,14 +122,14 @@
 										<span onclick="closeFullImg()">X</span>
 									</div>
 									<div class="img-gallery">
-										<img id="smallImg" src="images/Anna-s.jpg" alt="Picture" onclick="openFullImg()">	
-										<img id="smallImg" src="images/Jan-s.jpg" alt="Picture" onclick="openFullImg()">
-										<img id="smallImg" src="images/Us-s.jpg" alt="Picture" onclick="openFullImg()">
-										<img id="smallImg" src="images/Camping-s.jpg" alt="Picture" onclick="openFullImg()">
-										<img src="images/Stelvio-s.jpg" alt="Picture" onclick="openFullImg()">
-										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg()">
-										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg()">
-										<img src="images/pic09.jpg" alt="Picture" onclick="openFullImg()">				
+										<img id="Anna" src="images/Anna.jpg" alt="Picture" onclick="openFullImg(this.src)">	
+										<img id="Jan" src="images/Jan.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img id="Us" src="images/Us.JPG" alt="Picture" onclick="openFullImg(this.src)">
+										<img id="Camping" src="images/Camping.JPG" alt="Picture" onclick="openFullImg(this.src)">
+										<img id="Stelvio" src="images/Stelvio.JPG" alt="Picture" onclick="openFullImg(this.src)">
+										<img id="Us2" src="images/Us2.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img id="Stelvio" src="images/Stelvio.jpg" alt="Picture" onclick="openFullImg(this.src)">
+										<img id="Camping" src="images/Camping.jpg" alt="Picture" onclick="openFullImg(this.src)">			
 									</div>
 								<hr />
 							</section>
@@ -150,23 +179,14 @@
 			<script>
 				var fullImgBox = document.getElementById("fullImgBox");
 				var fullImg = document.getElementById("fullImg");
-				var smallImg = document.getElementById("smallImg");
 				function openFullImg(pic){
 							fullImgBox.style.display = "flex";
 							fullImg.src = pic;
-							if (smallImg.getAttribute('src') == "images/Anna-s.jpg")
-               							{fullImg.src = "images/Anna.jpg";}
-							else if (smallImg.getAttribute('src') == "images/Jan-s.jpg")
-               							{fullImg.src = "images/Jan.jpg";}
-							else
-								{fullImg.src = "images/Stelvio.jpg";}
 							}
 				function closeFullImg() {
 							fullImgBox.style.display = "none";
 							}
 			</script>
-
-
 
 	</body>
 </html>
